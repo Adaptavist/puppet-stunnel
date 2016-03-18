@@ -15,6 +15,9 @@ CAfile = <%= @ca_file %>
 CRLfile = <%= @crl_file %>
 <% end -%>
 sslVersion = <%= @ssl_version_real %>
+<% if @ciphers -%>
+ciphers = <%= @ciphers %>
+<% end -%>
 <% if @verify -%>
 verify = <%= @verify %>
 <% end -%>

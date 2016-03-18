@@ -96,6 +96,8 @@
 # [*fips*]
 #   Enable or disable FIPS 140-2 mode.
 #
+# [*ciphers*]
+#   A colon-delimited list of the ciphers to allow in the SSL connection.
 # === Examples
 #
 #   stunnel::tun { 'rsyncd':
@@ -147,6 +149,7 @@ define stunnel::tun(
     $ssl_options    = undef,
     $socket_options = ['l:TCP_NODELAY=1','r:TCP_NODELAY=1'],
     $fips           = undef,
+    $ciphers        = undef,
 ) {
 
   $ssl_version_real = $ssl_version ? {
