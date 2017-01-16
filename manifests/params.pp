@@ -27,15 +27,16 @@
 #
 class stunnel::params {
   case $osfamily {
-    Debian: {
+    'Debian': {
       $conf_dir = '/etc/stunnel'
       $package  = 'stunnel4'
       $service  = 'stunnel4'
     }
-    RedHat: {
+    'RedHat': {
       $conf_dir = '/etc/stunnel'
       $package = 'stunnel'
       $service = 'stunnel'
     }
+    default: {}
   }
 }
