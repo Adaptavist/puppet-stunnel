@@ -198,6 +198,7 @@ define stunnel::tun(
       owner  => $user,
       group  => $group,
       mode   => '0600',
+      before => File[$conf_dir]
     }
   }
 }
